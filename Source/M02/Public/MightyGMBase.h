@@ -20,10 +20,12 @@ public:
 
 	virtual void Tick(float DeltaSeconds) override;
 
+	virtual void PostLogin(APlayerController* NewPlayer) override;
+
 public:
 
-	UFUNCTION()
-	FCardPlayer* GetCardPlayer(int32 playerID);
+	//UFUNCTION()
+	//FCardPlayer * GetCardPlayer(int32 playerID);
 
 
 
@@ -33,4 +35,7 @@ protected:
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = GM, meta = (BlueprintProtected = "true"))
 	TArray<FCardPlayer> PlayerInfo;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = GM, meta = (BlueprintProtected = "true"))
+	TArray<APlayerController*> CardPlayerControllers;
 };
